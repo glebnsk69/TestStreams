@@ -40,6 +40,7 @@ public class Main {
 
 
 
+
 //        list.stream().forEach(System.out::println);
 //        Stream stream = list.stream();
 //        System.out.println(stream.toString()+", "+stream.count());
