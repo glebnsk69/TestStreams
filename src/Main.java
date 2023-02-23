@@ -15,14 +15,28 @@ public class Main {
         }
 //        проверяю что получилось
         userList.stream().forEach(o-> System.out.println(o.getNumber()+":"+o.getName()));
-        // сортирую по длинне и вывожу отсортированое
+// сортирую по длинне и вывожу отсортированое
         userList.stream()
                 .sorted((o1, o2) -> o1.getName().length()-o2.getName().length())
                 .forEach(System.out::println);
-        // сортирую по алфавиту и вывожу
+// сортирую по алфавиту и вывожу
         userList.stream()
                 .sorted((o1, o2) -> o1.getName().compareToIgnoreCase(o2.getName()))
                 .forEach(System.out::println);
+
+        System.out.println("сортирую и вывожу только на А");
+        userList.stream()
+                .filter(user -> user.getName().matches("^А.*"))
+                .sorted((o1, o2) ->o1.getName().compareToIgnoreCase(o2.getName()))
+                .forEach(System.out::println);
+        System.out.println("===========================");
+        System.out.println("вывожу только на А");
+        userList.stream()
+                .filter(user -> user.getName().matches("^А.*"))
+                .forEach(System.out::println);
+        System.out.println("===========================");
+
+
 
 
 
